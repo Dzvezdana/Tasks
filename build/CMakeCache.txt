@@ -269,11 +269,23 @@ beginner_tutorials_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/beginner_tutoria
 //Value Computed by CMake
 beginner_tutorials_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/beginner_tutorials
 
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/opt/ros/jade/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/opt/ros/jade/share/bondcpp/cmake
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/jade/share/catkin/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/jade/share/class_loader/cmake
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/jade/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for dynamic_reconfigure.
+dynamic_reconfigure_DIR:PATH=/opt/ros/jade/share/dynamic_reconfigure/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/jade/share/gencpp/cmake
@@ -318,6 +330,9 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//The directory containing a CMake configuration file for interactive_markers.
+interactive_markers_DIR:PATH=/opt/ros/jade/share/interactive_markers/cmake
+
 //Value Computed by CMake
 learning_tf_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/learning_tf
 
@@ -325,7 +340,7 @@ learning_tf_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/learning_tf
 learning_tf_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/learning_tf
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/jade/lib/libtf2.so
+lib:FILEPATH=/opt/ros/jade/lib/libinteractive_markers.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/jade/share/message_filters/cmake
@@ -336,11 +351,32 @@ message_generation_DIR:PATH=/opt/ros/jade/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/jade/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/opt/ros/jade/share/nodelet/cmake
+
+//The directory containing a CMake configuration file for pcl_conversions.
+pcl_conversions_DIR:PATH=/opt/ros/jade/share/pcl_conversions/cmake
+
+//The directory containing a CMake configuration file for pcl_msgs.
+pcl_msgs_DIR:PATH=/opt/ros/jade/share/pcl_msgs/cmake
+
+//The directory containing a CMake configuration file for pcl_ros.
+pcl_ros_DIR:PATH=/opt/ros/jade/share/pcl_ros/cmake
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/jade/share/pluginlib/cmake
+
 //Value Computed by CMake
 robot_setup_tf_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/robot_setup_tf
 
 //Value Computed by CMake
 robot_setup_tf_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/robot_setup_tf
+
+//The directory containing a CMake configuration file for rosbag.
+rosbag_DIR:PATH=/opt/ros/jade/share/rosbag/cmake
+
+//The directory containing a CMake configuration file for rosbag_storage.
+rosbag_storage_DIR:PATH=/opt/ros/jade/share/rosbag_storage/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/jade/share/rosconsole/cmake
@@ -360,6 +396,15 @@ rosgraph_DIR:PATH=/opt/ros/jade/share/rosgraph/cmake
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/jade/share/rosgraph_msgs/cmake
 
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/jade/share/roslib/cmake
+
+//The directory containing a CMake configuration file for roslz4.
+roslz4_DIR:PATH=/opt/ros/jade/share/roslz4/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/jade/share/rospack/cmake
+
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/jade/share/rospy/cmake
 
@@ -368,6 +413,9 @@ rostime_DIR:PATH=/opt/ros/jade/share/rostime/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/jade/share/sensor_msgs/cmake
+
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/opt/ros/jade/share/smclib/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/jade/share/std_msgs/cmake
@@ -390,8 +438,20 @@ tf2_ros_DIR:PATH=/opt/ros/jade/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/jade/share/tf/cmake
 
+//The directory containing a CMake configuration file for topic_tools.
+topic_tools_DIR:PATH=/opt/ros/jade/share/topic_tools/cmake
+
 //The directory containing a CMake configuration file for turtlesim.
 turtlesim_DIR:PATH=/opt/ros/jade/share/turtlesim/cmake
+
+//Value Computed by CMake
+using_markers_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/using_markers
+
+//Value Computed by CMake
+using_markers_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/using_markers
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/opt/ros/jade/share/visualization_msgs/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/jade/share/xmlrpcpp/cmake
@@ -498,7 +558,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=5
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

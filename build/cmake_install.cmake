@@ -120,6 +120,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/arsovska/Tasks/build/beginner_tutorials/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/robot_setup_tf/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/learning_tf/cmake_install.cmake")
+  INCLUDE("/home/arsovska/Tasks/build/using_markers/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
