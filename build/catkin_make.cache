@@ -1,0 +1,2 @@
+beginner_tutorials:learning_tf:robot_setup_tf
+-DCATKIN_DEVEL_PREFIX=/home/arsovska/Tasks/devel -DCMAKE_INSTALL_PREFIX=/home/arsovska/Tasks/install -G Unix Makefiles
