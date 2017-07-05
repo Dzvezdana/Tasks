@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+find_package( OpenCV REQUIRED )
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -196,3 +198,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(tf_publisher_base src/tf_publisher_base.cpp)
+target_link_libraries(tf_publisher_base ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

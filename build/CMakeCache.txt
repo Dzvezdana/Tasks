@@ -14,14 +14,23 @@
 # EXTERNAL cache entries
 ########################
 
-//Build shared libraries (DLLs).
+//Build dynamically-linked binaries
 BUILD_SHARED_LIBS:BOOL=ON
 
-//Value Computed by CMake
-Beginner_Tutorials_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/beginner_tutorials
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=Boost_DIR-NOTFOUND
 
-//Value Computed by CMake
-Beginner_Tutorials_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/beginner_tutorials
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/usr/include
+
+//Boost library directory
+Boost_LIBRARY_DIR:PATH=/usr/lib/x86_64-linux-gnu
+
+//Boost python library (debug)
+Boost_PYTHON_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python.so
+
+//Boost python library (release)
+Boost_PYTHON_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python.so
 
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
@@ -204,7 +213,7 @@ EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 EMPY_SCRIPT:STRING=/usr/bin/empy
 
 //Path to a file.
-GTEST_INCLUDE_DIR:PATH=/usr/include
+GTEST_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
 GTEST_LIBRARY:FILEPATH=/usr/local/lib/libgtest.so
@@ -236,6 +245,21 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
+//Path to a file.
+PYTHON_INCLUDE_DIR:PATH=/usr/include/python2.7
+
+//Path to a file.
+PYTHON_INCLUDE_DIR2:PATH=/usr/include/x86_64-linux-gnu/python2.7
+
+//Path to a library.
+PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython2.7.so
+
+//Path to a library.
+PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
+//Numpy include directory
+PYTHON_NUMPY_INCLUDE_DIR:PATH=/usr/lib/python2.7/dist-packages/numpy/core/include
+
 //Specify specific Python version to use ('major.minor' or 'major')
 PYTHON_VERSION:STRING=
 
@@ -258,10 +282,7 @@ UBUNTU:BOOL=TRUE
 UBUNTU_TRUSTY:BOOL=TRUE
 
 //Path to a file.
-_CATKIN_GTEST_INCLUDE:FILEPATH=/usr/include/gtest/gtest.h
-
-//Path to a file.
-_CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
+_path_name:FILEPATH=/home/arsovska/Tasks/src/vision_opencv/cv_bridge/test/python_bindings.py
 
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/jade/share/actionlib/cmake
@@ -293,8 +314,20 @@ class_loader_DIR:PATH=/opt/ros/jade/share/class_loader/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/jade/share/cpp_common/cmake
 
+//Value Computed by CMake
+cv_bridge_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/vision_opencv/cv_bridge
+
 //The directory containing a CMake configuration file for cv_bridge.
-cv_bridge_DIR:PATH=/opt/ros/jade/share/cv_bridge/cmake
+cv_bridge_DIR:PATH=/home/arsovska/Tasks/devel/share/cv_bridge/cmake
+
+//Dependencies for the target
+cv_bridge_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;/opt/ros/jade/lib/librosconsole.so;general;/opt/ros/jade/lib/librosconsole_log4cxx.so;general;/opt/ros/jade/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/jade/lib/libroscpp_serialization.so;general;/opt/ros/jade/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/jade/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;
+
+//Value Computed by CMake
+cv_bridge_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/vision_opencv/cv_bridge
+
+//Dependencies for the target
+cv_bridge_boost_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_python.so;general;/opt/ros/jade/lib/librosconsole.so;general;/opt/ros/jade/lib/librosconsole_log4cxx.so;general;/opt/ros/jade/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/jade/lib/libroscpp_serialization.so;general;/opt/ros/jade/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/jade/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;cv_bridge;
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/jade/share/dynamic_reconfigure/cmake
@@ -318,29 +351,13 @@ genpy_DIR:PATH=/opt/ros/jade/share/genpy/cmake
 geometry_msgs_DIR:PATH=/opt/ros/jade/share/geometry_msgs/cmake
 
 //Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/gtest
+image_geometry_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/vision_opencv/image_geometry
 
 //Dependencies for the target
-gtest_LIB_DEPENDS:STATIC=general;-lpthread;
+image_geometry_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/usr/src/gtest
-
-//Build gtest's sample programs.
-gtest_build_samples:BOOL=OFF
-
-//Build all of gtest's own tests.
-gtest_build_tests:BOOL=OFF
-
-//Disable uses of pthreads in gtest.
-gtest_disable_pthreads:BOOL=OFF
-
-//Use shared (DLL) run-time lib even when Google Test is built
-// as static lib.
-gtest_force_shared_crt:BOOL=OFF
-
-//Dependencies for the target
-gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
+image_geometry_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/vision_opencv/image_geometry
 
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/jade/share/image_transport/cmake
@@ -369,8 +386,11 @@ message_runtime_DIR:PATH=/opt/ros/jade/share/message_runtime/cmake
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/jade/share/nodelet/cmake
 
-//The directory containing a CMake configuration file for opencv2.
-opencv2_DIR:PATH=opencv2_DIR-NOTFOUND
+//Value Computed by CMake
+opencv_tests_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/vision_opencv/opencv_tests
+
+//Value Computed by CMake
+opencv_tests_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/vision_opencv/opencv_tests
 
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/jade/share/pcl_conversions/cmake
@@ -389,6 +409,12 @@ robot_setup_tf_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/robot_setup_tf
 
 //Value Computed by CMake
 robot_setup_tf_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/robot_setup_tf
+
+//Value Computed by CMake
+ros_threads_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/ros_threads
+
+//Value Computed by CMake
+ros_threads_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/ros_threads
 
 //Value Computed by CMake
 ros_transframes_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/ros_transframes
@@ -486,14 +512,14 @@ using_markers_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/using_markers
 //Value Computed by CMake
 using_markers_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/using_markers
 
+//Value Computed by CMake
+vision_opencv_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/vision_opencv/vision_opencv
+
+//Value Computed by CMake
+vision_opencv_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/vision_opencv/vision_opencv
+
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/jade/share/visualization_msgs/cmake
-
-//Value Computed by CMake
-webcam_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/webcam
-
-//Value Computed by CMake
-webcam_SOURCE_DIR:STATIC=/home/arsovska/Tasks/src/webcam
 
 //Value Computed by CMake
 webcam_snapshot_BINARY_DIR:STATIC=/home/arsovska/Tasks/build/webcam_snapshot
@@ -509,6 +535,16 @@ xmlrpcpp_DIR:PATH=/opt/ros/jade/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_INCLUDE_DIR
+Boost_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_LIBRARY_DIR
+Boost_LIBRARY_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_DEBUG
+Boost_PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_RELEASE
+Boost_PYTHON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/arsovska/Tasks/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/arsovska/Tasks/build/test_results
@@ -576,14 +612,6 @@ CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
-//Have symbol pthread_create
-CMAKE_HAVE_LIBC_CREATE:INTERNAL=
-//Have library pthreads
-CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
-//Have library pthread
-CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
-//Have include pthread.h
-CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Start directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/arsovska/Tasks/src
@@ -606,7 +634,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=8
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=17
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -648,23 +676,18 @@ CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenCV
-FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v3.2.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v3.2.0(3.2.0)]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.26()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.6()]
-//Details about finding Threads
-FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding PythonLibs
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython2.7.so][/usr/include/python2.7;/usr/include/x86_64-linux-gnu/python2.7][v2.7.6(2.7)]
 GTEST_BOTH_LIBRARIES:INTERNAL=/usr/local/lib/libgtest.so;/usr/local/lib/libgtest_main.so
 GTEST_FOUND:INTERNAL=TRUE
-GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
-GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
-GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
-GTEST_FROM_SOURCE_LIBRARY_DIRS:INTERNAL=/home/arsovska/Tasks/build/gtest
-GTEST_FROM_SOURCE_MAIN_LIBRARIES:INTERNAL=gtest_main
 //ADVANCED property for variable: GTEST_INCLUDE_DIR
 GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
-GTEST_INCLUDE_DIRS:INTERNAL=/usr/include
+GTEST_INCLUDE_DIRS:INTERNAL=/usr/local/include
 GTEST_LIBRARIES:INTERNAL=/usr/local/lib/libgtest.so
 //ADVANCED property for variable: GTEST_LIBRARY
 GTEST_LIBRARY-ADVANCED:INTERNAL=1
@@ -679,10 +702,26 @@ GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_INCLUDE_DIR
+PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_INCLUDE_DIR2
+PYTHON_INCLUDE_DIR2-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
+//ADVANCED property for variable: PYTHON_LIBRARY
+PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
+PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Components requested for this build tree.
+_Boost_COMPONENTS_SEARCHED:INTERNAL=python
+//Last used Boost_INCLUDE_DIR value.
+_Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
+//Last used Boost_LIBRARY_DIR value.
+_Boost_LIBRARY_DIR_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
+//Last used Boost_USE_MULTITHREADED value.
+_Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
 __pkg_config_checked_avcodec:INTERNAL=1
 __pkg_config_checked_swscale:INTERNAL=1
 avcodec_CFLAGS:INTERNAL=

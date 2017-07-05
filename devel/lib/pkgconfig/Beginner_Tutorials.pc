@@ -1,8 +1,0 @@
-prefix=/home/arsovska/Tasks/devel
-
-Name: Beginner_Tutorials
-Description: Description of Beginner_Tutorials
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/arsovska/Tasks/devel/lib 
-Requires: 

@@ -14,13 +14,13 @@ int main(int argc, char** argv)
     std::getline(std::cin, inputString);
     std_msgs::String msg;
 
-    if(inputString.compare("something") == 0)
-    {
+   // if(inputString.compare("something") == 0)
+    //{
       //send a request to the node serving out the messages
       //print out recieved messages.
       msg.data = inputString;
       p.publish(msg);
-    }
+    //}
 
     ros::spinOnce();
   }

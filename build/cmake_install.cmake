@@ -116,8 +116,13 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  INCLUDE("/home/arsovska/Tasks/build/vision_opencv/opencv_tests/cmake_install.cmake")
+  INCLUDE("/home/arsovska/Tasks/build/vision_opencv/image_geometry/cmake_install.cmake")
+  INCLUDE("/home/arsovska/Tasks/build/vision_opencv/vision_opencv/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/beginner_tutorials/cmake_install.cmake")
+  INCLUDE("/home/arsovska/Tasks/build/ros_threads/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/ros_transframes/cmake_install.cmake")
+  INCLUDE("/home/arsovska/Tasks/build/vision_opencv/cv_bridge/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/robot_setup_tf/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/learning_tf/cmake_install.cmake")
   INCLUDE("/home/arsovska/Tasks/build/usb_cam/cmake_install.cmake")

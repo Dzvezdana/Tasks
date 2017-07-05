@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/arsovska/Tasks/src/vision_opencv/cv_bridge/include/cv_bridge/cv_bridge.h
+sensor_msgs/Image.h
+-
+sensor_msgs/CompressedImage.h
+-
+sensor_msgs/image_encodings.h
+-
+ros/static_assert.h
+-
+opencv2/core/core.hpp
+-
+opencv2/imgproc/imgproc.hpp
+-
+opencv2/imgproc/types_c.h
+-
+stdexcept
+-
+
 /home/arsovska/Tasks/src/webcam_snapshot/src/image_converter.cpp
 ros/ros.h
 -
@@ -17,11 +35,15 @@ std_srvs/Empty.h
 -
 sensor_msgs/image_encodings.h
 -
+opencv2/core/core.hpp
+-
 opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
 -
 sstream
+-
+iostream
 -
 
 /opt/ros/jade/include/XmlRpcDecl.h
@@ -38,24 +60,6 @@ string
 vector
 -
 time.h
--
-
-/opt/ros/jade/include/cv_bridge/cv_bridge.h
-sensor_msgs/Image.h
--
-sensor_msgs/CompressedImage.h
--
-sensor_msgs/image_encodings.h
--
-ros/static_assert.h
--
-opencv2/core/core.hpp
--
-opencv2/imgproc/imgproc.hpp
--
-opencv2/imgproc/types_c.h
--
-stdexcept
 -
 
 /opt/ros/jade/include/image_transport/camera_publisher.h
@@ -894,11 +898,9 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/usr/include/opencv/cxcore.h
+/usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
-/usr/include/opencv/opencv2/core/core_c.h
-opencv2/core/core.hpp
-/usr/include/opencv/opencv2/core/core.hpp
+/usr/local/include/opencv/opencv2/core/core_c.h
 
 /usr/local/include/opencv2/calib3d.hpp
 opencv2/core.hpp

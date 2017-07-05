@@ -149,6 +149,44 @@ depend:
 	cd /home/arsovska/Tasks/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+ros_transframes/CMakeFiles/tf_publisher_base.dir/rule:
+	cd /home/arsovska/Tasks/build && $(MAKE) -f CMakeFiles/Makefile2 ros_transframes/CMakeFiles/tf_publisher_base.dir/rule
+.PHONY : ros_transframes/CMakeFiles/tf_publisher_base.dir/rule
+
+# Convenience name for target.
+tf_publisher_base: ros_transframes/CMakeFiles/tf_publisher_base.dir/rule
+.PHONY : tf_publisher_base
+
+# fast build rule for target.
+tf_publisher_base/fast:
+	cd /home/arsovska/Tasks/build && $(MAKE) -f ros_transframes/CMakeFiles/tf_publisher_base.dir/build.make ros_transframes/CMakeFiles/tf_publisher_base.dir/build
+.PHONY : tf_publisher_base/fast
+
+src/tf_publisher_base.o: src/tf_publisher_base.cpp.o
+.PHONY : src/tf_publisher_base.o
+
+# target to build an object file
+src/tf_publisher_base.cpp.o:
+	cd /home/arsovska/Tasks/build && $(MAKE) -f ros_transframes/CMakeFiles/tf_publisher_base.dir/build.make ros_transframes/CMakeFiles/tf_publisher_base.dir/src/tf_publisher_base.cpp.o
+.PHONY : src/tf_publisher_base.cpp.o
+
+src/tf_publisher_base.i: src/tf_publisher_base.cpp.i
+.PHONY : src/tf_publisher_base.i
+
+# target to preprocess a source file
+src/tf_publisher_base.cpp.i:
+	cd /home/arsovska/Tasks/build && $(MAKE) -f ros_transframes/CMakeFiles/tf_publisher_base.dir/build.make ros_transframes/CMakeFiles/tf_publisher_base.dir/src/tf_publisher_base.cpp.i
+.PHONY : src/tf_publisher_base.cpp.i
+
+src/tf_publisher_base.s: src/tf_publisher_base.cpp.s
+.PHONY : src/tf_publisher_base.s
+
+# target to generate assembly for a file
+src/tf_publisher_base.cpp.s:
+	cd /home/arsovska/Tasks/build && $(MAKE) -f ros_transframes/CMakeFiles/tf_publisher_base.dir/build.make ros_transframes/CMakeFiles/tf_publisher_base.dir/src/tf_publisher_base.cpp.s
+.PHONY : src/tf_publisher_base.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +200,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... tf_publisher_base"
+	@echo "... src/tf_publisher_base.o"
+	@echo "... src/tf_publisher_base.i"
+	@echo "... src/tf_publisher_base.s"
 .PHONY : help
 
 

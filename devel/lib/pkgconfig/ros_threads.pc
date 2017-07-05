@@ -1,0 +1,8 @@
+prefix=/home/arsovska/Tasks/devel
+
+Name: ros_threads
+Description: Description of ros_threads
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/arsovska/Tasks/devel/lib 
+Requires: 
