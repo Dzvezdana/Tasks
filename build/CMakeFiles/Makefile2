@@ -208,84 +208,6 @@ clean: CMakeFiles/tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory gtest
-
-# Convenience name for "all" pass in the directory.
-gtest/all:
-.PHONY : gtest/all
-
-# Convenience name for "clean" pass in the directory.
-gtest/clean: gtest/CMakeFiles/gtest.dir/clean
-gtest/clean: gtest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/clean
-
-# Convenience name for "preinstall" pass in the directory.
-gtest/preinstall:
-.PHONY : gtest/preinstall
-
-#=============================================================================
-# Target rules for target gtest/CMakeFiles/gtest.dir
-
-# All Build rule for target.
-gtest/CMakeFiles/gtest.dir/all:
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  18
-	@echo "Built target gtest"
-.PHONY : gtest/CMakeFiles/gtest.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gtest.dir/rule
-
-# Convenience name for target.
-gtest: gtest/CMakeFiles/gtest.dir/rule
-.PHONY : gtest
-
-# clean rule for target.
-gtest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/clean
-.PHONY : gtest/CMakeFiles/gtest.dir/clean
-
-# clean rule for target.
-clean: gtest/CMakeFiles/gtest.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target gtest/CMakeFiles/gtest_main.dir
-
-# All Build rule for target.
-gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  19
-	@echo "Built target gtest_main"
-.PHONY : gtest/CMakeFiles/gtest_main.dir/all
-
-# Build rule for subdir invocation for target.
-gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gtest_main.dir/rule
-
-# Convenience name for target.
-gtest_main: gtest/CMakeFiles/gtest_main.dir/rule
-.PHONY : gtest_main
-
-# clean rule for target.
-gtest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/CMakeFiles/gtest_main.dir/clean
-
-# clean rule for target.
-clean: gtest/CMakeFiles/gtest_main.dir/clean
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory beginner_tutorials
 
 # Convenience name for "all" pass in the directory.
@@ -498,9 +420,9 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_gencpp.dir/clean
 
 # All Build rule for target.
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/all
-beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/all
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles 
@@ -535,9 +457,9 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/cl
 # Target rules for target beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir
 
 # All Build rule for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  5 6
@@ -568,9 +490,9 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.di
 # Target rules for target beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir
 
 # All Build rule for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/all: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  7 8 9
@@ -601,9 +523,9 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_eus.di
 # Target rules for target beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir
 
 # All Build rule for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  10 11
@@ -634,9 +556,9 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.d
 # Target rules for target beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir
 
 # All Build rule for target.
+beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_AddTwoInts.dir/all
 beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/all: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/all
-beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/all: beginner_tutorials/CMakeFiles/_beginner_tutorials_generate_messages_check_deps_Num.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  12 13 14 15
@@ -763,7 +685,7 @@ clean: beginner_tutorials/CMakeFiles/beginner_tutorials_genpy.dir/clean
 beginner_tutorials/CMakeFiles/listener.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/listener.dir/build.make beginner_tutorials/CMakeFiles/listener.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  20
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  19
 	@echo "Built target listener"
 .PHONY : beginner_tutorials/CMakeFiles/listener.dir/all
 
@@ -1170,7 +1092,7 @@ clean: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 beginner_tutorials/CMakeFiles/talker.dir/all: beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/all
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/depend
 	$(MAKE) -f beginner_tutorials/CMakeFiles/talker.dir/build.make beginner_tutorials/CMakeFiles/talker.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  26
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  25
 	@echo "Built target talker"
 .PHONY : beginner_tutorials/CMakeFiles/talker.dir/all
 
@@ -1197,6 +1119,21 @@ beginner_tutorials/CMakeFiles/talker.dir/clean:
 # clean rule for target.
 clean: beginner_tutorials/CMakeFiles/talker.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory ros_transframes
+
+# Convenience name for "all" pass in the directory.
+ros_transframes/all:
+.PHONY : ros_transframes/all
+
+# Convenience name for "clean" pass in the directory.
+ros_transframes/clean:
+.PHONY : ros_transframes/clean
+
+# Convenience name for "preinstall" pass in the directory.
+ros_transframes/preinstall:
+.PHONY : ros_transframes/preinstall
 
 #=============================================================================
 # Directory level rules for directory robot_setup_tf
@@ -1866,7 +1803,7 @@ clean: robot_setup_tf/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
 robot_setup_tf/CMakeFiles/tf_broadcaster.dir/all:
 	$(MAKE) -f robot_setup_tf/CMakeFiles/tf_broadcaster.dir/build.make robot_setup_tf/CMakeFiles/tf_broadcaster.dir/depend
 	$(MAKE) -f robot_setup_tf/CMakeFiles/tf_broadcaster.dir/build.make robot_setup_tf/CMakeFiles/tf_broadcaster.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  27
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  26
 	@echo "Built target tf_broadcaster"
 .PHONY : robot_setup_tf/CMakeFiles/tf_broadcaster.dir/all
 
@@ -2025,7 +1962,7 @@ clean: robot_setup_tf/CMakeFiles/tf_generate_messages_py.dir/clean
 robot_setup_tf/CMakeFiles/tf_listener.dir/all:
 	$(MAKE) -f robot_setup_tf/CMakeFiles/tf_listener.dir/build.make robot_setup_tf/CMakeFiles/tf_listener.dir/depend
 	$(MAKE) -f robot_setup_tf/CMakeFiles/tf_listener.dir/build.make robot_setup_tf/CMakeFiles/tf_listener.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  28
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  27
 	@echo "Built target tf_listener"
 .PHONY : robot_setup_tf/CMakeFiles/tf_listener.dir/all
 
@@ -2124,7 +2061,7 @@ clean: learning_tf/CMakeFiles/frame_tf_broadcaster.dir/clean
 learning_tf/CMakeFiles/sensor_tf.dir/all:
 	$(MAKE) -f learning_tf/CMakeFiles/sensor_tf.dir/build.make learning_tf/CMakeFiles/sensor_tf.dir/depend
 	$(MAKE) -f learning_tf/CMakeFiles/sensor_tf.dir/build.make learning_tf/CMakeFiles/sensor_tf.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  24
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  23
 	@echo "Built target sensor_tf"
 .PHONY : learning_tf/CMakeFiles/sensor_tf.dir/all
 
@@ -2283,7 +2220,7 @@ clean: learning_tf/CMakeFiles/std_srvs_generate_messages_py.dir/clean
 learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/all:
 	$(MAKE) -f learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/build.make learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/depend
 	$(MAKE) -f learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/build.make learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  29
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  28
 	@echo "Built target turtle_tf_broadcaster"
 .PHONY : learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/all
 
@@ -2318,7 +2255,7 @@ clean: learning_tf/CMakeFiles/turtle_tf_broadcaster.dir/clean
 learning_tf/CMakeFiles/turtle_tf_listener.dir/all:
 	$(MAKE) -f learning_tf/CMakeFiles/turtle_tf_listener.dir/build.make learning_tf/CMakeFiles/turtle_tf_listener.dir/depend
 	$(MAKE) -f learning_tf/CMakeFiles/turtle_tf_listener.dir/build.make learning_tf/CMakeFiles/turtle_tf_listener.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  30
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  29
 	@echo "Built target turtle_tf_listener"
 .PHONY : learning_tf/CMakeFiles/turtle_tf_listener.dir/all
 
@@ -2468,6 +2405,93 @@ learning_tf/CMakeFiles/turtlesim_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: learning_tf/CMakeFiles/turtlesim_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory usb_cam
+
+# Convenience name for "all" pass in the directory.
+usb_cam/all: usb_cam/CMakeFiles/usb_cam.dir/all
+usb_cam/all: usb_cam/CMakeFiles/usb_cam_node.dir/all
+.PHONY : usb_cam/all
+
+# Convenience name for "clean" pass in the directory.
+usb_cam/clean: usb_cam/CMakeFiles/usb_cam.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
+.PHONY : usb_cam/clean
+
+# Convenience name for "preinstall" pass in the directory.
+usb_cam/preinstall:
+.PHONY : usb_cam/preinstall
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/usb_cam.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/usb_cam.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  30
+	@echo "Built target usb_cam"
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
+
+# Include target in all.
+all: usb_cam/CMakeFiles/usb_cam.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/usb_cam.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/rule
+
+# Convenience name for target.
+usb_cam: usb_cam/CMakeFiles/usb_cam.dir/rule
+.PHONY : usb_cam
+
+# clean rule for target.
+usb_cam/CMakeFiles/usb_cam.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/clean
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/usb_cam.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/usb_cam_node.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  31
+	@echo "Built target usb_cam_node"
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
+
+# Include target in all.
+all: usb_cam/CMakeFiles/usb_cam_node.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/rule
+
+# Convenience name for target.
+usb_cam_node: usb_cam/CMakeFiles/usb_cam_node.dir/rule
+.PHONY : usb_cam_node
+
+# clean rule for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/clean
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -2914,7 +2938,7 @@ clean: using_markers/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/cle
 using_markers/CMakeFiles/menu.dir/all:
 	$(MAKE) -f using_markers/CMakeFiles/menu.dir/build.make using_markers/CMakeFiles/menu.dir/depend
 	$(MAKE) -f using_markers/CMakeFiles/menu.dir/build.make using_markers/CMakeFiles/menu.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  21
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  20
 	@echo "Built target menu"
 .PHONY : using_markers/CMakeFiles/menu.dir/all
 
@@ -3228,7 +3252,7 @@ clean: using_markers/CMakeFiles/pcl_ros_gencfg.dir/clean
 using_markers/CMakeFiles/points_and_lines.dir/all:
 	$(MAKE) -f using_markers/CMakeFiles/points_and_lines.dir/build.make using_markers/CMakeFiles/points_and_lines.dir/depend
 	$(MAKE) -f using_markers/CMakeFiles/points_and_lines.dir/build.make using_markers/CMakeFiles/points_and_lines.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  22
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  21
 	@echo "Built target points_and_lines"
 .PHONY : using_markers/CMakeFiles/points_and_lines.dir/all
 
@@ -3263,7 +3287,7 @@ clean: using_markers/CMakeFiles/points_and_lines.dir/clean
 using_markers/CMakeFiles/pong.dir/all:
 	$(MAKE) -f using_markers/CMakeFiles/pong.dir/build.make using_markers/CMakeFiles/pong.dir/depend
 	$(MAKE) -f using_markers/CMakeFiles/pong.dir/build.make using_markers/CMakeFiles/pong.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  23
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  22
 	@echo "Built target pong"
 .PHONY : using_markers/CMakeFiles/pong.dir/all
 
@@ -3298,7 +3322,7 @@ clean: using_markers/CMakeFiles/pong.dir/clean
 using_markers/CMakeFiles/simple_marker.dir/all:
 	$(MAKE) -f using_markers/CMakeFiles/simple_marker.dir/build.make using_markers/CMakeFiles/simple_marker.dir/depend
 	$(MAKE) -f using_markers/CMakeFiles/simple_marker.dir/build.make using_markers/CMakeFiles/simple_marker.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  25
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  24
 	@echo "Built target simple_marker"
 .PHONY : using_markers/CMakeFiles/simple_marker.dir/all
 
@@ -3572,6 +3596,56 @@ using_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: using_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory webcam_snapshot
+
+# Convenience name for "all" pass in the directory.
+webcam_snapshot/all: webcam_snapshot/CMakeFiles/image_converter.dir/all
+.PHONY : webcam_snapshot/all
+
+# Convenience name for "clean" pass in the directory.
+webcam_snapshot/clean: webcam_snapshot/CMakeFiles/image_converter.dir/clean
+.PHONY : webcam_snapshot/clean
+
+# Convenience name for "preinstall" pass in the directory.
+webcam_snapshot/preinstall:
+.PHONY : webcam_snapshot/preinstall
+
+#=============================================================================
+# Target rules for target webcam_snapshot/CMakeFiles/image_converter.dir
+
+# All Build rule for target.
+webcam_snapshot/CMakeFiles/image_converter.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
+	$(MAKE) -f webcam_snapshot/CMakeFiles/image_converter.dir/build.make webcam_snapshot/CMakeFiles/image_converter.dir/depend
+	$(MAKE) -f webcam_snapshot/CMakeFiles/image_converter.dir/build.make webcam_snapshot/CMakeFiles/image_converter.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/arsovska/Tasks/build/CMakeFiles  18
+	@echo "Built target image_converter"
+.PHONY : webcam_snapshot/CMakeFiles/image_converter.dir/all
+
+# Include target in all.
+all: webcam_snapshot/CMakeFiles/image_converter.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+webcam_snapshot/CMakeFiles/image_converter.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 webcam_snapshot/CMakeFiles/image_converter.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arsovska/Tasks/build/CMakeFiles 0
+.PHONY : webcam_snapshot/CMakeFiles/image_converter.dir/rule
+
+# Convenience name for target.
+image_converter: webcam_snapshot/CMakeFiles/image_converter.dir/rule
+.PHONY : image_converter
+
+# clean rule for target.
+webcam_snapshot/CMakeFiles/image_converter.dir/clean:
+	$(MAKE) -f webcam_snapshot/CMakeFiles/image_converter.dir/build.make webcam_snapshot/CMakeFiles/image_converter.dir/clean
+.PHONY : webcam_snapshot/CMakeFiles/image_converter.dir/clean
+
+# clean rule for target.
+clean: webcam_snapshot/CMakeFiles/image_converter.dir/clean
 .PHONY : clean
 
 #=============================================================================

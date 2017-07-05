@@ -39,8 +39,7 @@
 /home/arsovska/Tasks/build/robot_setup_tf/CMakeFiles/geometry_msgs_generate_messages_eus.dir
 /home/arsovska/Tasks/build/robot_setup_tf/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /home/arsovska/Tasks/build/robot_setup_tf/CMakeFiles/geometry_msgs_generate_messages_py.dir
-/home/arsovska/Tasks/build/gtest/CMakeFiles/gtest.dir
-/home/arsovska/Tasks/build/gtest/CMakeFiles/gtest_main.dir
+/home/arsovska/Tasks/build/webcam_snapshot/CMakeFiles/image_converter.dir
 /home/arsovska/Tasks/build/beginner_tutorials/CMakeFiles/listener.dir
 /home/arsovska/Tasks/build/using_markers/CMakeFiles/menu.dir
 /home/arsovska/Tasks/build/using_markers/CMakeFiles/nodelet_generate_messages_cpp.dir
@@ -99,6 +98,8 @@
 /home/arsovska/Tasks/build/learning_tf/CMakeFiles/turtlesim_generate_messages_eus.dir
 /home/arsovska/Tasks/build/learning_tf/CMakeFiles/turtlesim_generate_messages_lisp.dir
 /home/arsovska/Tasks/build/learning_tf/CMakeFiles/turtlesim_generate_messages_py.dir
+/home/arsovska/Tasks/build/usb_cam/CMakeFiles/usb_cam.dir
+/home/arsovska/Tasks/build/usb_cam/CMakeFiles/usb_cam_node.dir
 /home/arsovska/Tasks/build/using_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
 /home/arsovska/Tasks/build/using_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir
 /home/arsovska/Tasks/build/using_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir

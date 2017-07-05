@@ -1,0 +1,8 @@
+prefix=/home/arsovska/Tasks/devel
+
+Name: webcam_snapshot
+Description: Description of webcam_snapshot
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/arsovska/Tasks/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/arsovska/Tasks/devel
+
+Name: usb_cam
+Description: Description of usb_cam
+Version: 0.3.6
+Cflags: -I/home/arsovska/Tasks/src/usb_cam/include
+Libs: -L/home/arsovska/Tasks/devel/lib -lusb_cam
+Requires: 

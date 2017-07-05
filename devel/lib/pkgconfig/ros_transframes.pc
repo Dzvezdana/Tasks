@@ -1,0 +1,8 @@
+prefix=/home/arsovska/Tasks/devel
+
+Name: ros_transframes
+Description: Description of ros_transframes
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/arsovska/Tasks/devel/lib 
+Requires: 
