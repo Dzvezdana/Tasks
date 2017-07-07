@@ -1,8 +1,0 @@
-prefix=/home/arsovska/Tasks/install
-
-Name: opencv_tests
-Description: Description of opencv_tests
-Version: 1.12.4
-Cflags: 
-Libs: -L/home/arsovska/Tasks/install/lib 
-Requires: 

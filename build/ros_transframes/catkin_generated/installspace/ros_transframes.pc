@@ -1,8 +1,0 @@
-prefix=/home/arsovska/Tasks/install
-
-Name: ros_transframes
-Description: Description of ros_transframes
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/arsovska/Tasks/install/lib 
-Requires: 
