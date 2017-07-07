@@ -3,6 +3,6 @@ prefix=/home/arsovska/Tasks/devel
 Name: ros_threads
 Description: Description of ros_threads
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/arsovska/Tasks/devel/include
 Libs: -L/home/arsovska/Tasks/devel/lib 
 Requires: 

@@ -81,16 +81,21 @@ tf_publisher_base_EXTERNAL_OBJECTS =
 
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: ros_transframes/CMakeFiles/tf_publisher_base.dir/src/tf_publisher_base.cpp.o
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: ros_transframes/CMakeFiles/tf_publisher_base.dir/build.make
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libtf.so
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libtf2_ros.so
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libactionlib.so
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libmessage_filters.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libroscpp.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libxmlrpcpp.so
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libtf2.so
+/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libroscpp_serialization.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/librosconsole.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/librosconsole_log4cxx.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/librosconsole_backend_interface.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /usr/lib/liblog4cxx.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libxmlrpcpp.so
-/home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libroscpp_serialization.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/librostime.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 /home/arsovska/Tasks/devel/lib/ros_transframes/tf_publisher_base: /opt/ros/jade/lib/libcpp_common.so

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(ros_threads)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+##add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -13,6 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation
 )
+
+add_definitions(-std=c++11)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -55,9 +57,9 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
- add_service_files(
+add_service_files(
    FILES
-   Time.srv
+   time_threads.srv
 #   Service2.srv
  )
 
@@ -69,10 +71,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -198,3 +200,11 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(threads_server src/threads_server.cpp)
+target_link_libraries(threads_server ${catkin_LIBRARIES})
+add_dependencies(threads_server ros_threads_gencpp)
+
+#add_executable(threads_client src/threads_client.cpp)
+#target_link_libraries(threads_client ${catkin_LIBRARIES})
+#add_dependencies(threads_client ros_threads_gencpp)
