@@ -9,24 +9,41 @@
 #include <sstream>
 #include <iostream>
 
+/**
+ * This class contains a ros node that subscribes to the image stream of your webcam and provides
+ * a service called /take_snapshot.
+ */
 
-sensor_msgs::Image img_;
-static const std::string OPENCV_WINDOW = "Image window";
-int img_count = 0;
+class WebcamSnapshot {
 
-void imgCallback(const sensor_msgs::ImageConstPtr& msg)
-  {
+    sensor_msgs::Image img_;
+    int img_count = 0;
 
+public:
+
+    WebcamSnapshot() {}
+    void imgCallback(const sensor_msgs::ImageConstPtr& msg);
+    bool snapshot(std_srvs::Empty::Request &req, std_srvs::Empty::Request &res);
+
+};
+
+WebcamSnapshot(){
+
+    ros::Subscriber sub = n.subscribe("/usb_cam/image_raw",1,imgCallback);
+    ros::ServiceServer snapshot_service = n.advertiseService("/snapshot", snapshot);
+}
+
+void WebcamSnapshot::imgCallback(const sensor_msgs::ImageConstPtr& msg){
+    
     img_=*msg;
-  }
+}
 
-bool snapshot(std_srvs::Empty::Request &req, std_srvs::Empty::Request &res){
+bool WebcamSnapshot::snapshot(std_srvs::Empty::Request &req, std_srvs::Empty::Request &res){
 
     ROS_INFO("Service for taking snapshots started");
   
     cv_bridge::CvImagePtr cv_ptr;
-    //try
-    //{
+
     cv_ptr = cv_bridge::toCvCopy(img_, sensor_msgs::image_encodings::BGR8);
     std::stringstream sstream;
     sstream<<"/tmp/webcam/ "<<img_count<<".jpg";
@@ -34,23 +51,16 @@ bool snapshot(std_srvs::Empty::Request &req, std_srvs::Empty::Request &res){
     ROS_ASSERT(cv::imwrite(sstream.str(),cv_ptr->image));
     img_count++;
     return true;
-    //}
-    //catch (cv_bridge::Exception& e)
-    //{
-      //ROS_ERROR("cv_bridge exception: %s", e.what());
-      //return true;
-    //}
 }
 
 
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "image_converter");
-  
   ros::NodeHandle n;
 
-  ros::Subscriber sub = n.subscribe("/usb_cam/image_raw",1,imgCallback);
-  ros::ServiceServer snapshot_service = n.advertiseService("/snapshot", snapshot);
+  // Instance
+  WebcamSnapshot snap;
   
   ros::spin();
   cv::destroyWindow("Image window");

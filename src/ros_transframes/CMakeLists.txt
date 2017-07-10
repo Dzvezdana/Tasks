@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
 )
 
-find_package( OpenCV REQUIRED )
+#find_package( OpenCV REQUIRED )
 add_definitions(-std=c++11)
 
 ## System dependencies are found with CMake's conventions
@@ -202,10 +202,10 @@ include_directories(
 # catkin_add_nosetests(test)
 
 add_executable(tf_publisher_base src/tf_publisher_base.cpp)
-target_link_libraries(tf_publisher_base ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(tf_publisher_base ${catkin_LIBRARIES})
 
 add_executable(tf_publisher_base_v2 src/tf_publisher_base_v2.cpp)
-target_link_libraries(tf_publisher_base_v2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(tf_publisher_base_v2 ${catkin_LIBRARIES})
 
 add_executable(tf_receiver_translator src/tf_receiver_translator.cpp)
-target_link_libraries(tf_receiver_translator ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(tf_receiver_translator ${catkin_LIBRARIES})

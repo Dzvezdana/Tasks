@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(webcam_snapshot)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
-# add_definitions(-std=c++11)
+add_definitions(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -205,6 +205,8 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+add_executable(image_converter_v2 src/image_converter_v2.cpp)
+target_link_libraries(image_converter_v2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(image_converter src/image_converter.cpp)
 target_link_libraries(image_converter ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
