@@ -13,8 +13,8 @@
   *
   * To run the program in new terminals: 
   * Start roscore
-  * $rosrun ros_threads threads_server.cpp
-  * $rosrun ros_threads threads_client.cpp
+  * $rosrun ros_threads threads_server_v2.cpp
+  * $rosrun ros_threads threads_client_v2.cpp
 */
 
 class ThreadsServer{

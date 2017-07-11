@@ -34,7 +34,7 @@ public:
     
     // imgCallback (subcribes to /usb_cam/image_raw)
     void imgCallback(const sensor_msgs::ImageConstPtr& msg);
-    // Takes the snapshot and saves it in /tmp/webcam/ without overwriting the previous images.
+    // Takes the snapshot and saves it in /tmp/webcam/ without overwriting the previous images
     bool snapshot(std_srvs::Empty::Request &req, std_srvs::Empty::Request &res);
 
 };

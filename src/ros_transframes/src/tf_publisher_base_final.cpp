@@ -11,16 +11,8 @@
 //tf::Transform transform;
 geometry_msgs::TransformStamped tfs;
 
-class Base {
-
-    public:
-    Base () {}
-    void process_input(const std::string& input);
-    void call_publisher(ros::Publisher pub);
-};
-
 //receives the input string and extracts the num values values 
-void Base::process_input(const std::string& input)
+void process_input(const std::string& input)
 {
     ROS_INFO("You entered:");
     std::cout << input << std::endl;
@@ -87,7 +79,6 @@ int main(int argc, char** argv)
   ros::Publisher tf_pub = n.advertise<geometry_msgs::TransformStamped>("world/base_tf_enu", 1);
 
   tf::TransformBroadcaster br;
-  Base base;
 
 
   tfs.header.stamp = ros::Time::now();
@@ -112,7 +103,7 @@ int main(int argc, char** argv)
 
   	ROS_INFO("Awaiting user input of 6 numbers divided with ',': ");
   	std::cin >> input_str;
-	base.process_input(input_str);
+	process_input(input_str);
   	
         tf_pub.publish(tfs);
 	

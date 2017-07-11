@@ -201,6 +201,15 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+add_executable(threads_server_old src/threads_server_old.cpp)
+target_link_libraries(threads_server_old ${catkin_LIBRARIES})
+add_dependencies(threads_server_old ros_threads_gencpp)
+
+add_executable(threads_client_old src/threads_client_old.cpp)
+target_link_libraries(threads_client_old ${catkin_LIBRARIES})
+add_dependencies(threads_client_old ros_threads_gencpp)
+
+
 add_executable(threads_server src/threads_server.cpp)
 target_link_libraries(threads_server ${catkin_LIBRARIES})
 add_dependencies(threads_server ros_threads_gencpp)

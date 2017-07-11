@@ -59,7 +59,7 @@ add_definitions(-std=c++11)
 ## Generate services in the 'srv' folder
 add_service_files(
    FILES
-   time_threads.srv
+   Time.srv
 #   Service2.srv
  )
 
@@ -208,3 +208,12 @@ add_dependencies(threads_server ros_threads_gencpp)
 add_executable(threads_client src/threads_client.cpp)
 target_link_libraries(threads_client ${catkin_LIBRARIES})
 add_dependencies(threads_client ros_threads_gencpp)
+
+
+add_executable(threads_server_v2 src/threads_server_v2.cpp)
+target_link_libraries(threads_server_v2 ${catkin_LIBRARIES})
+add_dependencies(threads_server_v2 ros_threads_gencpp)
+
+add_executable(threads_client_v2 src/threads_client_v2.cpp)
+target_link_libraries(threads_client_v2 ${catkin_LIBRARIES})
+add_dependencies(threads_client_v2 ros_threads_gencpp)

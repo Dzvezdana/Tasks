@@ -16,7 +16,7 @@
  *
  * To run the program in new terminals: 
  * Start roscore
- * $rosrun webcam_snapshot image_converter_v2
+ * $rosrun webcam_snapshot ImageSave
  * $roslaunch usb_cam usb_cam.launch
  * $rosservice call /snapshot
  */
@@ -34,7 +34,7 @@ public:
     
     // imgCallback (subcribes to /usb_cam/image_raw)
     void imgCallback(const sensor_msgs::ImageConstPtr& msg);
-    // Takes the snapshot and saves it in /tmp/webcam/ without overwriting the previous images.
+    // Takes the snapshot and saves it in /tmp/webcam/ without overwriting the previous images
     bool snapshot(std_srvs::Empty::Request &req, std_srvs::Empty::Request &res);
 
 };

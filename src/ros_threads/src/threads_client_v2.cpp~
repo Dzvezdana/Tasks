@@ -20,8 +20,8 @@
   *
   * To run the program in new terminals: 
   * Start roscore
-  * $rosrun ros_threads threads_server.cpp
-  * $rosrun ros_threads threads_client.cpp
+  * $rosrun ros_threads threads_server_v2.cpp
+  * $rosrun ros_threads threads_client_v2.cpp
 */
 
 class ThreadClient{
@@ -49,28 +49,26 @@ bool ThreadClient::start_thread()
     double decimal_part;
     int diff;
 
-    // generate random delay
     while(1){
   
         int random_number = rand() % 4 + 1; 
         srv.request.Delay_s = random_number;
   
-    // calculate the difference
+
     if (client.call(srv)){ 
     
-        ros::Time time_now = ros::Time::now(); // gets the current time
-        std::stringstream(srv.response.Time) >> result; // gets the response from the server
-        decimal_part = modf(result, &int_part); 
+        ros::Time time_now = ros::Time::now();
+        std::stringstream(srv.response.Time) >> result;
+        decimal_part = modf(result, &int_part);
         miliseconds_result = decimal_part*1000;
-        diff =  time_now.nsec/1000000 - miliseconds_result; // calculates the difference
+        diff =  time_now.nsec/1000000 - miliseconds_result;
         ROS_INFO("Difference in ms: %d", diff);
 }
-    else
-{
+    else{
+
         ROS_ERROR("Failed to call service /unix_time_now");
 
-    return 1; 
-}
+    return 1; }
 }
 }
 
