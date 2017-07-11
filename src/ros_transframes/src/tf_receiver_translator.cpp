@@ -11,12 +11,12 @@ void enuCallback(const geometry_msgs::TransformStampedConstPtr& msg)
 {
   geometry_msgs::TransformStamped enu;
 
-  //grab the enu msg
+  // take the enu msg
   enu=*msg;
 
   //std::cout << temp.transform.translation.x <<std::endl; 
 
-  //convert enu to ned
+  // ENU to NED
   ned.header.stamp = ros::Time::now();
   ned.header.frame_id = "world";
   ned.child_frame_id = "world/world/tf_ned";
@@ -30,7 +30,7 @@ void enuCallback(const geometry_msgs::TransformStampedConstPtr& msg)
   ned.transform.rotation.z = -enu.transform.rotation.z;	
   ned.transform.rotation.w = enu.transform.rotation.w;	
 
-  //convert enu to nwu
+  // ENU to NWU
   nwu.header.stamp = ros::Time::now();
   nwu.header.frame_id = "world";
   nwu.child_frame_id = "world/world/tf_nwu";
@@ -61,25 +61,7 @@ int main(int argc, char** argv){
 
   ros::Rate rate(1.0);
   while (node.ok()){
-/*
-    tf::StampedTransform transform;
-    try{
-      listener.lookupTransform("world", "world/base_tf_enu",  
-                               ros::Time(0), transform);
-    }
-    catch (tf::TransformException ex){
-      ROS_ERROR("%s",ex.what());
-      ros::Duration(1.0).sleep();
-    }
-
-   //get transform values
-   double x = transform.getOrigin().x();
-   double y = transform.getOrigin().y();
-   double z = transform.getOrigin().z();
-   double rx = transform.getRotation().x();
-   double ry = transform.getRotation().y();
-   double rz = transform.getRotation().z();
-*/  
+ 
    ned_pub.publish(ned);
    nwu_pub.publish(nwu);
 

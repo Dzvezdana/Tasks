@@ -204,14 +204,5 @@ include_directories(
 add_executable(tf_publisher_base src/tf_publisher_base.cpp)
 target_link_libraries(tf_publisher_base ${catkin_LIBRARIES})
 
-add_executable(tf_publisher_base_final src/tf_publisher_base_final.cpp)
-target_link_libraries(tf_publisher_base_final ${catkin_LIBRARIES})
-
-add_executable(tf_receiver_translator_v2 src/tf_receiver_translator_v2.cpp)
-target_link_libraries(tf_receiver_translator_v2 ${catkin_LIBRARIES})
-
-add_executable(tf_publisher_base_v2 src/tf_publisher_base_v2.cpp)
-target_link_libraries(tf_publisher_base_v2 ${catkin_LIBRARIES})
-
 add_executable(tf_receiver_translator src/tf_receiver_translator.cpp)
 target_link_libraries(tf_receiver_translator ${catkin_LIBRARIES})
