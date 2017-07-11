@@ -8,6 +8,8 @@
 #include <geometry_msgs/TransformStamped.h>
 #include "thread"
 
+// rosrun ros_transframes tf_publisher_base
+
 geometry_msgs::TransformStamped tfs;
 
 // receive and process the input

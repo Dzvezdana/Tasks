@@ -8,6 +8,8 @@
 #include <geometry_msgs/TransformStamped.h>
 #include "thread"
 
+// rosrun ros_transframes tf_publisher_base
+
 geometry_msgs::TransformStamped tfs;
 
 // receive and process the input
@@ -57,7 +59,7 @@ void process_input(const std::string& input)
    
 }
 
-//thread func for publishing
+//thread function for publishing
 void thread_publish(ros::Publisher pub)
 {
 	ros::Rate r(1.0);

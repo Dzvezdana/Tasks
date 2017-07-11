@@ -2,6 +2,10 @@
 #include <tf/transform_listener.h>
 #include <geometry_msgs/TransformStamped.h>
 
+// rosrun ros_transframes tf_receiver_translator
+// rostopic echo world/tf_ned
+// rostopic echo world/tf_nwu
+
 ros::Publisher ned_pub;
 ros::Publisher nwu_pub;
 geometry_msgs::TransformStamped ned;
