@@ -205,8 +205,8 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(ImageSave src/ImageSave.cpp)
-target_link_libraries(ImageSave ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_executable(image_converter src/ImageSave.cpp)
+target_link_libraries(image_converter ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
-add_executable(ImageSaveOld src/ImageSaveOld.cpp)
-target_link_libraries(ImageSaveOld ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+#add_executable(image_converter src/ImageSaveOld.cpp)
+#target_link_libraries(ImageSaveOld ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

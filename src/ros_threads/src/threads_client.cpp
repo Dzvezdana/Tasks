@@ -27,12 +27,20 @@
 class ThreadClient{
 
     private:
-
-    ros::NodeHandle n_;
+    
+    //! @name global variables
+    //@{
+    ros::NodeHandle n_; // node handle
+    //@}
 
     public:
 
-    ThreadClient() {}
+    ThreadClient() {}  // constructor
+   
+     /**
+     * Thread function that generates the random delay, calls the service and based on the response 
+     calculates the difference in miliseconds between the current time and service reply Time
+     */
     bool start_thread();
      
 };
@@ -43,13 +51,13 @@ bool ThreadClient::start_thread()
     client = n_.serviceClient<ros_threads::Time>("/unix_time_now");
     ros_threads::Time srv;
 
-    ros::Rate r(1.0);
+    ros::Rate r_hz(1.0); // ros rate in Hz (1 sec)
     double result, int_part;
     int miliseconds_result;
     double decimal_part;
     int diff;
 
-    // generate random delay
+    // generate random delay between between 0 and 5
     while(1){
   
         int random_number = rand() % 4 + 1; 
@@ -71,25 +79,26 @@ bool ThreadClient::start_thread()
 
     return 1; 
 }
+    r_hz.sleep();
 }
 }
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "threads_client");
+    ros::init(argc, argv, "threads_client");  // node initialization 
    
-    ThreadClient cl1;
+    ThreadClient cl1;  // create object
   
-    std::thread t1(&ThreadClient::start_thread, ThreadClient());
+    std::thread t1(&ThreadClient::start_thread, ThreadClient()); // call the thread
     t1.detach();
 
-    ros::Rate rate(2.0); //In Hertz
+    ros::Rate rate_hz(2.0); // ros rate in Hz (0.5 sec)
 
     while(ros::ok()){
 
-    ros::Time current_time = ros::Time::now();
-    ROS_INFO("Current_time: %d.%d", current_time.sec,current_time.nsec);
-    rate.sleep(); 
+    ros::Time current_time = ros::Time::now(); // current time
+    ROS_INFO("Current_time: %d.%d", current_time.sec,current_time.nsec); // print the current time
+    rate_hz.sleep(); 
     ros::spinOnce();
 }
 
