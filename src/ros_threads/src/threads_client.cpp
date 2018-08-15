@@ -24,7 +24,7 @@
   * $rosrun ros_threads threads_client.cpp
 */
 
-class ThreadClient{
+class ThreadClient {
 
     private:
     
@@ -45,8 +45,8 @@ class ThreadClient{
      
 };
 
-bool ThreadClient::start_thread()
-{   
+bool ThreadClient::start_thread() {
+
     ros::ServiceClient client;
     client = n_.serviceClient<ros_threads::Time>("/unix_time_now");
     ros_threads::Time srv;
@@ -58,23 +58,20 @@ bool ThreadClient::start_thread()
     int diff;
 
     // generate random delay between between 0 and 5
-    while(1){
-  
+    while(1) {
         int random_number = rand() % 4 + 1; 
         srv.request.Delay_s = random_number;
   
     // calculate the difference
-    if (client.call(srv)){ 
-    
-        ros::Time time_now = ros::Time::now(); // gets the current time
+    if (client.call(srv)) { 
+    	ros::Time time_now = ros::Time::now(); // gets the current time
         std::stringstream(srv.response.Time) >> result; // gets the response from the server
         decimal_part = modf(result, &int_part); 
         miliseconds_result = decimal_part*1000;
         diff =  time_now.nsec/1000000 - miliseconds_result; // calculates the difference
         ROS_INFO("Difference in ms: %d", diff);
-}
-    else
-{
+    }
+    else {
         ROS_ERROR("Failed to call service /unix_time_now");
 
     return 1; 
@@ -83,8 +80,7 @@ bool ThreadClient::start_thread()
 }
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     ros::init(argc, argv, "threads_client");  // node initialization 
    
     ThreadClient cl1;  // create object
@@ -94,14 +90,12 @@ int main(int argc, char **argv)
 
     ros::Rate rate_hz(2.0); // ros rate in Hz (0.5 sec)
 
-    while(ros::ok()){
+    while(ros::ok()) {
+    	ros::Time current_time = ros::Time::now(); // current time
+    	ROS_INFO("Current_time: %d.%d", current_time.sec,current_time.nsec); // print the current time
+    	rate_hz.sleep(); 
+    	ros::spinOnce();
+    }
 
-    ros::Time current_time = ros::Time::now(); // current time
-    ROS_INFO("Current_time: %d.%d", current_time.sec,current_time.nsec); // print the current time
-    rate_hz.sleep(); 
-    ros::spinOnce();
-}
-
-  return 0;
-
+    return 0;
 }

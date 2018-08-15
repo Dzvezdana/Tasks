@@ -17,11 +17,11 @@
   * $rosrun ros_threads threads_client.cpp
 */
 
-class ThreadsServer{
+class ThreadsServer {
 
 public:
 
-    ThreadsServer() {} // constructor
+	ThreadsServer() {} // constructor
     
      /**
      * time_req is a callback function. Depending on the service call argument (Delay_s) sends
@@ -37,15 +37,15 @@ public:
 
 };
 
-void ThreadsServer::start_t(int t, std::string response)
-{
+void ThreadsServer::start_t(int t, std::string response) {
+	
     std::this_thread::sleep_for(std::chrono::milliseconds(int(t * 1000))); // creates the delay
     ROS_INFO_STREAM("Sending back response (after delay)" + response);
 }
 
 
-bool ThreadsServer::time_req(ros_threads::Time::Request  &req, ros_threads::Time::Response &res)
-{
+bool ThreadsServer::time_req(ros_threads::Time::Request  &req, ros_threads::Time::Response &res) {
+
     ros::Time result = ros::Time::now(); // gets the current time
     int milisec = result.nsec/1000;  // convert to ms
     res.Time = std::to_string(result.sec) + "." + std::to_string(milisec);  // convert the response to string
@@ -53,24 +53,21 @@ bool ThreadsServer::time_req(ros_threads::Time::Request  &req, ros_threads::Time
     ROS_INFO("request Delay = %ld", (long int)req.Delay_s); 
 
     // if the input value is between 0 and 3, call the thread function and add delay
-    if(req.Delay_s > 0 && req.Delay_s < 3)
-{
-         std::thread t1(&ThreadsServer::start_t, this, req.Delay_s, res.Time);
-         t1.detach();
-}
-   // otherwise (input value > 3) print the response without delay
-    else 
-{
-         ROS_INFO_STREAM("Sending back response (without delay)" + res.Time);
-} 
+    if(req.Delay_s > 0 && req.Delay_s < 3) {
+    	std::thread t1(&ThreadsServer::start_t, this, req.Delay_s, res.Time);
+        t1.detach();
+     }
+    // otherwise (input value > 3) print the response without delay
+    else {
+        ROS_INFO_STREAM("Sending back response (without delay)" + res.Time);
+     } 
 
     return true;
 }
 
 
-int main(int argc, char **argv)
-{
- 
+int main(int argc, char **argv) {
+
     ros::init(argc, argv, "threads_server"); // node initialization 
     ros::NodeHandle n; // create the handle
     
@@ -80,9 +77,9 @@ int main(int argc, char **argv)
   
     ros::Rate rate_hz(1.0); // ros rate in Hz (1 sec)
 
-    while(n.ok()){
-    rate_hz.sleep(); 
-    ros::spinOnce();
+    while(n.ok()) {
+    	rate_hz.sleep(); 
+    	ros::spinOnce();
     }
     return 0;
 }

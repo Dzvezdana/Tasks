@@ -6,29 +6,71 @@
 #include <vector>
 #include <string>
 #include <geometry_msgs/TransformStamped.h>
-#include "thread"
+#include <thread>
 
-// rosrun ros_transframes tf_publisher_base
+/**
+ * This class creates a publisher that publishes and updates the geometry_msgs::TransformStamped messages 
+ *
+ */
+class TfPublisherBase
+{
 
-geometry_msgs::TransformStamped tfs;
+public:
+    //! @name global variables
+    //@{
+    ros::NodeHandle g_n;
+    geometry_msgs::TransformStamped g_tfs;
+    ros::Publisher g_tf_pub;
+    //@}
 
-// receive and process the input
-void process_input(const std::string& input)
+    /**
+     * Constructor
+     * publisher is created and geometry_msgs::TransformStamped message is initialized
+     */
+    TfPublisherBase() 
+    {
+        g_tf_pub = g_n.advertise<geometry_msgs::TransformStamped>("world/base_tf_enu", 1);
+
+        g_tfs.header.stamp = ros::Time::now();
+        g_tfs.header.frame_id = "world";
+        g_tfs.child_frame_id = "world/base_tf_enu";
+
+        g_tfs.transform.translation.x = 0.0;
+        g_tfs.transform.translation.y = 0.0;
+        g_tfs.transform.translation.z = 0.0;
+        g_tfs.transform.rotation.x = 0.0;
+        g_tfs.transform.rotation.y = 0.0;
+        g_tfs.transform.rotation.z = 0.0;
+        g_tfs.transform.rotation.w = 1.0;
+    }
+
+    /**
+     * Function that converts the input string into 6 numbers and updates the geometry_msgs::TransformStamped message
+     */
+    void processInput(const std::string& input);
+ 
+    /**
+     * Thread function that publishes conctantly on the "world/base_tf_enu" topic in the background
+     */
+    void threadPublish();
+};
+
+void TfPublisherBase::processInput(const std::string& input)
 {
     ROS_INFO("You entered:");
     std::cout << input << std::endl;
 
-    std::vector<int> vect;
+    std::vector<float> vect;
     std::stringstream ss(input);
 
-    int i;
+    float i;    // float variable to store the parsed numbers
 
     while (ss >> i)
     {
         vect.push_back(i);
 
         if (ss.peek() == ',')
-            ss.ignore();
+             ss.ignore();
     }
     
     // print the parsed values
@@ -48,68 +90,55 @@ void process_input(const std::string& input)
     std::cout << vect.at(5)<<std::endl;
     std::cout << " "<<std::endl; 
 
-    // fill the msg
-    tfs.transform.translation.x = vect.at(0);
-    tfs.transform.translation.y = vect.at(1);
-    tfs.transform.translation.z = vect.at(2);
-    tfs.transform.rotation.x = vect.at(3);
-    tfs.transform.rotation.y = vect.at(4);
-    tfs.transform.rotation.z = vect.at(5);
-    tfs.transform.rotation.w = 1;
+    // update the msg
+    g_tfs.transform.translation.x = vect.at(0);
+    g_tfs.transform.translation.y = vect.at(1);
+    g_tfs.transform.translation.z = vect.at(2);
+    g_tfs.transform.rotation.x = vect.at(3);
+    g_tfs.transform.rotation.y = vect.at(4);
+    g_tfs.transform.rotation.z = vect.at(5);
+    g_tfs.transform.rotation.w = 1;
    
 }
 
-//thread function for publishing
-void thread_publish(ros::Publisher pub)
+void TfPublisherBase::threadPublish()
 {
-	ros::Rate r(1.0);
-	while(1)
-	{	
-	    pub.publish(tfs);
-	    r.sleep();
-	}
+    ros::Rate r_hz(1.0);
+    while(1)
+    { 
+        g_tf_pub.publish(g_tfs);
+  r_hz.sleep();
+    }
 }
-
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "tf_publisher_base");
-  ros::NodeHandle n;
+    // rosnode initialization 
+    ros::init(argc, argv, "tf_publisher_base");
 
-  ROS_INFO("Node started");
-  ros::Publisher tf_pub = n.advertise<geometry_msgs::TransformStamped>("world/base_tf_enu", 1);
+    // Create the object
+    TfPublisherBase tpb;
 
-  tf::TransformBroadcaster br;
+    // grab the node handle from the class
+    ros::NodeHandle nh = tpb.g_n;
 
-
-  tfs.header.stamp = ros::Time::now();
-  tfs.header.frame_id = "world";
-  tfs.child_frame_id = "world/base_tf_enu";
-
-  // init
-  tfs.transform.translation.x = 0.0;
-  tfs.transform.translation.y = 0.0;
-  tfs.transform.translation.z = 0.0;
-  tfs.transform.rotation.x = 0.0;
-  tfs.transform.rotation.y = 0.0;
-  tfs.transform.rotation.z = 0.0;
-  tfs.transform.rotation.w = 1.0;
+    ROS_INFO("Node started");
   
-  std::string input_str;
+    std::string input_str;   
 
-  std::thread t(thread_publish,tf_pub);
-  t.detach();
+    // start the thread function from the class
+    // NOTE: For some reason I could not start the thread (call the function) in the consturctor
+    std::thread t(&TfPublisherBase::threadPublish,&tpb);
+    t.detach();
 
-  ros::Rate rate(10.0);
-  while (n.ok()){
-
-  	ROS_INFO("Awaiting user input of 6 numbers divided with ',': ");
-  	std::cin >> input_str;
-	process_input(input_str);
-  	
-	br.sendTransform(tfs);
-        
-        rate.sleep();
-  }
-  return 0;
+    ros::Rate rate_hz(10.0);
+    while (nh.ok())
+    {
+        ROS_INFO("Awaiting user input of 6 numbers divided with ',': ");
+    std::cin >> input_str;
+  tpb.processInput(input_str);    // calls the class function to process the input string
+            
+        rate_hz.sleep();
+    }
+    return 0;
 };

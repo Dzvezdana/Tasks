@@ -2,8 +2,8 @@
 
 #include <interactive_markers/interactive_marker_server.h>
 
-void processFeedback(
-    const visualization_msgs::InteractiveMarkerFeedbackConstPtr &feedback )
+void processFeedback (
+    const visualization_msgs::InteractiveMarkerFeedbackConstPtr &feedback)
 {
   ROS_INFO_STREAM( feedback->marker_name << " is now at "
       << feedback->pose.position.x << ", " << feedback->pose.position.y
